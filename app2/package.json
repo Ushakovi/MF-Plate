@@ -1,5 +1,5 @@
 {
-    "name": "post-example-share",
+    "name": "app-example-share",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -7,8 +7,6 @@
         "start": "webpack serve",
         "build": "webpack --mode production"
     },
-    "author": "",
-    "license": "ISC",
     "devDependencies": {
         "@babel/core": "7.23.9",
         "@babel/preset-react": "7.23.3",
