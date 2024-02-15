@@ -44,6 +44,7 @@ module.exports = {
                     },
                 },
                 'react-dom',
+                'styled-components',
             ],
         }),
         new HtmlWebpackPlugin({

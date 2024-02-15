@@ -1,5 +1,6 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, version as ReactVersion } from 'react';
 import ReactDOM from 'react-dom';
+import { version as SCVersion } from 'styled-components';
 
 const Counter = React.lazy(() => import('app2/Counter'));
 
@@ -12,7 +13,9 @@ function App() {
 
     return (
         <>
-            <h1>Shell</h1>
+            <h1>
+                Shell React: {ReactVersion} SC: {SCVersion}
+            </h1>
             <p>{id}</p>
             <button onClick={handleClick}>Load second app</button>
             <React.Suspense fallback='Loading Counter...'>
