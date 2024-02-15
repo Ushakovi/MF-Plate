@@ -37,7 +37,14 @@ module.exports = {
             exposes: {
                 './Counter': './src/components/Counter',
             },
-            shared: ['react', 'react-dom'],
+            shared: [
+                {
+                    react: {
+                        singleton: true,
+                    },
+                },
+                'react-dom',
+            ],
         }),
         new HtmlWebpackPlugin({
             template: './index.html',

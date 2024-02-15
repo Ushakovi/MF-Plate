@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import ReactDOM from 'react-dom';
 
 const Counter = React.lazy(() => import('app2/Counter'));
 
 function App() {
-    const [count, setCount] = useState(0);
     const [load, setLoad] = useState(false);
-
+    const id = useId();
     const handleClick = () => {
         setLoad(true);
     };
 
     return (
         <>
-            <h1 onClick={handleClick}>Hello from React component</h1>
-
+            <h1>Shell</h1>
+            <p>{id}</p>
+            <button onClick={handleClick}>Load second app</button>
             <React.Suspense fallback='Loading Counter...'>
-                {load && (
-                    <Counter
-                        count={count}
-                        onIncrement={() => setCount(count + 1)}
-                        onDecrement={() => setCount(count - 1)}
-                    />
-                )}
+                {load && <Counter />}
             </React.Suspense>
         </>
     );
